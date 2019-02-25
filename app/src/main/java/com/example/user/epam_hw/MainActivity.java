@@ -17,5 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Toast.makeText(getApplicationContext(), "third feature2", Toast.LENGTH_LONG).show();
+
+        Toast.makeText(getApplicationContext(), "using stash", Toast.LENGTH_LONG).show();
     }
 }
