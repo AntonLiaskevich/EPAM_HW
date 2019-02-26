@@ -1,0 +1,6 @@
+[submodule "submodule"]
+    path = submodule
+    url = https://github.com/AntonLiaskevich/submodule.git
+[submodule "EPAM_submodule"]
+	path = EPAM_submodule
+	url = https://github.com/AntonLiaskevich/EPAM_submodule.git
