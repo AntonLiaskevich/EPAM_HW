@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EPAM_HW</string>
+    <string name="addText">Add text</string>
+    <string name="showText">Show text</string>
 </resources>
