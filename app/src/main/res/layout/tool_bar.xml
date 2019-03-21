@@ -1,0 +1,50 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tool_bar"
+    android:orientation="horizontal"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="208dp"
+            android:layout_marginRight="208dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            tools:ignore="MissingPrefix"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:id="@+id/settingIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="15dp"
+            android:contentDescription="@string/todo"
+            android:title="@string/copy"
+            app:showAsAction="ifRoom"
+            app:srcCompat="@drawable/ic_content_copy_black_24dp" />
+
+        <ImageView
+            android:id="@+id/copy"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/todo"
+            android:title="@string/show"
+            app:showAsAction="ifRoom"
+            app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+
+    </LinearLayout>
+</android.support.v7.widget.Toolbar>

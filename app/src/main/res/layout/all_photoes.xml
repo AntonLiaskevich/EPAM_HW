@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="104dp"
+            app:srcCompat="@mipmap/chihuahua"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="104dp"
+            android:src="@mipmap/labrador"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="104dp"
+            android:src="@mipmap/per1"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="104dp"
+            android:src="@mipmap/german"
+            android:contentDescription="@string/todo" />
+
+    </LinearLayout>
+</HorizontalScrollView>
