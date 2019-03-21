@@ -1,23 +1,21 @@
 package com.example.user.epam_hw;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.Window;
+import android.widget.ImageView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(getApplicationContext(), "first feature2", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "second feature2", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "first feature1", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "second feature1", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "third feature1", Toast.LENGTH_LONG).show();
-
-
-        Toast.makeText(getApplicationContext(), "third feature2", Toast.LENGTH_LONG).show();
-
-        Toast.makeText(getApplicationContext(), "using stash", Toast.LENGTH_LONG).show();
     }
 }
+
