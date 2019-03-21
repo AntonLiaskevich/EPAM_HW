@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lesson_ui_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@mipmap/screenshot2"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/lesson_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/avatar"
+        android:text="@string/theme_third"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/avatar" />
+
+    <TextView
+        android:id="@+id/lesson_mentor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lesson_theme"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/avatar"
+        android:layout_alignParentBottom="true"
+        android:text="@string/date_theme_third"
+        android:textSize="16sp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/avatar" />
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_toEndOf="@id/lesson_theme"
+        android:layout_toRightOf="@id/lesson_theme"
+        app:srcCompat="@drawable/ic_play_arrow"
+        tools:ignore="VectorDrawableCompat" />
+
+</RelativeLayout>
