@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="240dp"
-    android:background="colorPrimaryDark"
     android:orientation="vertical">
 
     <com.example.user.epam_hw.ProfileView
