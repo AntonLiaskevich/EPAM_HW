@@ -1,23 +1,111 @@
 package com.example.user.epam_hw;
 
+import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
-public class MainActivity extends AppCompatActivity {
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.View;
+
+import com.example.user.epam_hw.backend.IWebService;
+import com.example.user.epam_hw.backend.StudentsWebService;
+import com.example.user.epam_hw.backend.entities.Student;
+import com.example.user.epam_hw.util.ICallback;
+
+import java.util.List;
+
+public class MainActivity
+        extends AppCompatActivity
+        implements InputSrudent.InputDialogListener,
+        StudentsAdapter.OnItemDismissListener,
+        StudentsAdapter.OnItemEditListener {
+
+    private StudentsAdapter studentsAdapter;
+
+    private final IWebService<Student> webService = new StudentsWebService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(getApplicationContext(), "first feature2", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "second feature2", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "first feature1", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "second feature1", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "third feature1", Toast.LENGTH_LONG).show();
 
+        findViewById(R.id.add_button).setOnClickListener(addListener);
 
-        Toast.makeText(getApplicationContext(), "third feature2", Toast.LENGTH_LONG).show();
-
-        Toast.makeText(getApplicationContext(), "using stash", Toast.LENGTH_LONG).show();
+        initRecyclerView();
+        loadAllItems();
     }
+
+    @Override
+    public void itemDismissed(long id) {
+        webService.removeEntity(id);
+    }
+
+    @Override
+    public void ItemEditClick(long id) {
+        DialogFragment dialog = new InputSrudent();
+
+        Bundle dialogBundle = new Bundle();
+        dialogBundle.putLong(InputSrudent.STUDENT_ID, id);
+        dialog.setArguments(dialogBundle);
+
+        dialog.show(getSupportFragmentManager(), InputSrudent.EDIT_STUDENT_TAG);
+    }
+
+    @Override
+    public void applyDialogInfo(Intent intent) {
+        if (intent.getStringExtra(InputSrudent.TAG).equals(InputSrudent.EDIT_STUDENT_TAG)) {
+            webService.editEntity(intent.getLongExtra(InputSrudent.ID, 0),
+                    intent.getStringExtra(InputSrudent.NAME),
+                    intent.getIntExtra(InputSrudent.HOMEWORK_COUNT, 0));
+        } else {
+            webService.addEntity(intent.getStringExtra(InputSrudent.NAME),
+                    intent.getIntExtra(InputSrudent.HOMEWORK_COUNT, 0));
+        }
+
+        webService.getEntities(new ICallback<List<Student>>() {
+            @Override
+            public void onResult(List<Student> result) {
+                studentsAdapter.updateItems(result);
+            }
+        });
+    }
+
+    private void loadAllItems() {
+        webService.getEntities(new ICallback<List<Student>>() {
+            @Override
+            public void onResult(List<Student> result) {
+                studentsAdapter.addItems(result);
+            }
+        });
+    }
+
+    private void initRecyclerView() {
+
+        RecyclerView studentsRecyclerView = findViewById(R.id.students_recycler_view);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        studentsRecyclerView.setLayoutManager(layoutManager);
+        studentsAdapter = new StudentsAdapter(this);
+        studentsRecyclerView.setAdapter(studentsAdapter);
+        studentsRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        studentsRecyclerView.setItemAnimator(new DefaultItemAnimator() {
+            @Override
+            public boolean animateMove(RecyclerView.ViewHolder holder, int fromX, int fromY, int toX, int toY) {
+                return super.animateMove(holder, fromX, fromY, toX, toY);
+            }
+        });
+        new ItemTouchHelper(new ItemTouchCallback(studentsAdapter)).attachToRecyclerView(studentsRecyclerView);
+    }
+
+    private View.OnClickListener addListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            DialogFragment dialog = new InputSrudent();
+            dialog.show(getSupportFragmentManager(), InputSrudent.ADD_STUDENT_TAG);
+        }
+    };
 }
