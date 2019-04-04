@@ -7,16 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentInProgress extends Fragment {
+public class NewEpisodesFragment extends Fragment {
 
-    public static final String ARG_PAGE = "ARG_PAGE";
+    private static final String ARG_PAGE = "ARG_PAGE";
 
-    private int mPage;
-
-    public static FragmentInProgress newInstance(int page) {
+    public static NewEpisodesFragment newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
-        FragmentInProgress fragment = new FragmentInProgress();
+        NewEpisodesFragment fragment = new NewEpisodesFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -24,13 +22,13 @@ public class FragmentInProgress extends Fragment {
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mPage = getArguments().getInt(ARG_PAGE);
+            int mPage = getArguments().getInt(ARG_PAGE);
         }
     }
 
     @Override public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                        Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.in_progress_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_new_episodes, container, false);
 
         return view;
     }

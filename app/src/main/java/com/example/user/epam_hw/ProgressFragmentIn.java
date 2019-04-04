@@ -6,18 +6,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-public class FragmentDownloads extends Fragment {
+public class ProgressFragmentIn extends Fragment {
 
-    public static final String ARG_PAGE = "ARG_PAGE";
+    private static final String ARG_PAGE = "ARG_PAGE";
 
     private int mPage;
 
-    public static FragmentDownloads newInstance(int page) {
+    public static ProgressFragmentIn newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
-        FragmentDownloads fragment = new FragmentDownloads();
+        ProgressFragmentIn fragment = new ProgressFragmentIn();
         fragment.setArguments(args);
         return fragment;
     }
@@ -31,7 +30,7 @@ public class FragmentDownloads extends Fragment {
 
     @Override public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                        Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.downloads_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_in_progress, container, false);
 
         return view;
     }

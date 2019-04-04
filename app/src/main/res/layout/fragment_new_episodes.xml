@@ -9,11 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <include layout="@layout/first_item" />
+        <include layout="@layout/layout_first_item" />
 
-        <include layout="@layout/second_item" />
+        <include layout="@layout/layout_second_item" />
 
-        <include layout="@layout/third_item" />
+        <include layout="@layout/layout_third_item" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="32dp"
