@@ -33,10 +33,10 @@ public class ProfileView extends RelativeLayout {
         inflate(getContext(), R.layout.view_profile, this);
         setGravity(Gravity.BOTTOM);
         profileImage = findViewById(R.id.face_image);
-        profileImage.setOnClickListener(image);
+        profileImage.setOnClickListener(listener);
     }
 
-    OnClickListener image = new OnClickListener() {
+    OnClickListener listener = new OnClickListener() {
         @Override
         public void onClick(View view) {
             Random rand = new Random();
