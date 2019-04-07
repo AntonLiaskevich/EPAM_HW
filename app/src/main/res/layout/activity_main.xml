@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="startService"
-        android:text="@string/start_service" />
+        android:text="@string/start_service"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/counterTextView"

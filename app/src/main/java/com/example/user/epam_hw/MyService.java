@@ -11,11 +11,10 @@ public class MyService extends IntentService {
     public static final String COLORS_OF_BACKGROUND = "Colors";
     public static final String START_SERVICE = "StartService";
     public static final String ACTION_CHANGE_COLOR = "ChangeColor";
-    public static final String MY_SERVICE = "MyService";
     public static final boolean CHANGE_COLORS = true;
-    private Intent responseIntent;
+    private static final String MY_SERVICE = "MyService";
 
-    Random rand = new Random();
+    private Intent responseIntent;
 
     public MyService() {
         super(MY_SERVICE);
@@ -31,16 +30,16 @@ public class MyService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        Random rand = new Random();
         try {
             while (CHANGE_COLORS) {
-                int r = rand.nextInt(254) + 1;
-                int g = rand.nextInt(254) + 1;
-                int b = rand.nextInt(254) + 1;
-                int randomColor = Color.rgb(r, g, b);
+                int randomColor = Color.rgb(rand.nextInt(254) + 1,
+                        rand.nextInt(254) + 1, rand.nextInt(254) + 1);
                 responseIntent.putExtra(COLORS_OF_BACKGROUND, randomColor);
                 sendBroadcast(responseIntent);
                 Thread.sleep(500); }
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException ignored) {
         }
     }
 }

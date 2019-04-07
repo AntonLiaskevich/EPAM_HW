@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String CURRENT_COLOR = "currentColor";
+
     private MyBroadcastReceiver myBroadcastReceiver;
     private TextView textView;
     private Button startServiceButton;
@@ -37,21 +38,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         unregisterReceiver(myBroadcastReceiver);
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
         outState.putString(CURRENT_COLOR, textView.getText().toString());
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-
         textView.setText(savedInstanceState.getString(CURRENT_COLOR));
     }
 

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.widget.TextView;
 
 class MyBroadcastReceiver extends BroadcastReceiver {
+
     TextView textView;
 
     MyBroadcastReceiver(TextView textView) {
