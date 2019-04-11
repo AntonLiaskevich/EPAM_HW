@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">EPAM_HW</string>
+    <string name="app_name">Google Podcasts</string>
+    <string name="image">image</string>
+    <string name="someTheme">154: Developer Growth</string>
+    <string name="date_of_theme">2 days ago 19 min</string>
+    <string name="fragment_in_progress">Fragment in progress</string>
+    <string name="fragment_downloads">Fragment downloads</string>
+    <string name="all_new_episodes">All new episodes</string>
+    <string name="theme_second">Выпуск 89: Android in car</string>
+    <string name="date_theme_second">2 days ago 67 min</string>
+    <string name="date_theme_third">3 days ago 155 min</string>
+    <string name="theme_third">Podlodka #101</string>
+    <string name="google_podcasts">Google Podcasts</string>
+    <string name="new_label">new</string>
+    <string name="episodes">New Episodes</string>
+    <string name="progress">In progress</string>
+    <string name="downloads">Downloads</string>
 </resources>

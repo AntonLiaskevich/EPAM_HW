@@ -1,23 +1,22 @@
 package com.example.user.epam_hw;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
+
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(getApplicationContext(), "first feature2", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "second feature2", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "first feature1", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "second feature1", Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "third feature1", Toast.LENGTH_LONG).show();
 
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPager.setAdapter(
+                new ViewPagerAdapter(getSupportFragmentManager(), MainActivity.this));
 
-        Toast.makeText(getApplicationContext(), "third feature2", Toast.LENGTH_LONG).show();
-
-        Toast.makeText(getApplicationContext(), "using stash", Toast.LENGTH_LONG).show();
+        TabLayout tabLayout = findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
+
