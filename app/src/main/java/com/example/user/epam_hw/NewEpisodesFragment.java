@@ -16,6 +16,7 @@ public class NewEpisodesFragment extends Fragment {
         args.putInt(ARG_PAGE, page);
         NewEpisodesFragment fragment = new NewEpisodesFragment();
         fragment.setArguments(args);
+
         return fragment;
     }
 

@@ -18,6 +18,7 @@ public class ProgressFragmentIn extends Fragment {
         args.putInt(ARG_PAGE, page);
         ProgressFragmentIn fragment = new ProgressFragmentIn();
         fragment.setArguments(args);
+
         return fragment;
     }
 

@@ -7,14 +7,18 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    private String tabTitles[] = new String[] { "New Episodes", "In progress", "Downloads" };
 
-    ViewPagerAdapter(FragmentManager fm, Context context) {
-        super(fm);
+    private final int PAGE_COUNT = 3;
+
+    private String tabTitles[] = new String[] {String.valueOf(R.string.episodes),
+            String.valueOf(R.string.progress), String.valueOf(R.string.downloads)};
+
+    ViewPagerAdapter(FragmentManager fragmentsManager, Context context) {
+        super(fragmentsManager);
     }
 
     @Override public int getCount() {
-        return 3;
+        return PAGE_COUNT;
     }
 
     @Override public Fragment getItem(int position) {
@@ -26,6 +30,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 return DownloadsFragment.newInstance(position + 1);
         }
+
         return null;
     }
 

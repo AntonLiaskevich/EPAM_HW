@@ -12,4 +12,7 @@
     <string name="theme_third">Podlodka #101</string>
     <string name="google_podcasts">Google Podcasts</string>
     <string name="new_label">new</string>
+    <string name="episodes">New Episodes</string>
+    <string name="progress">In progress</string>
+    <string name="downloads">Downloads</string>
 </resources>
