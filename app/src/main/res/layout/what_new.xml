@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@mipmap/ic_german_round"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:layout_width="212dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_toRightOf="@+id/userAvatar"
+        android:text="@string/status"
+        android:textSize="20sp"
+        android:layout_toEndOf="@+id/userAvatar" />
+
+    <ImageButton
+        android:id="@+id/bottomLine"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="88dp"
+        app:srcCompat="@color/colorGray"
+        tools:srcCompat="@android:color/tertiary_text_light"
+        android:contentDescription="@string/todo" />
+
+    <ImageButton
+        android:id="@+id/topLine"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@color/colorGray"
+        tools:srcCompat="@android:color/tertiary_text_light"
+        android:contentDescription="@string/todo" />
+
+</RelativeLayout>
