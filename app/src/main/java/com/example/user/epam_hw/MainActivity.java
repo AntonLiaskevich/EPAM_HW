@@ -3,6 +3,7 @@ package com.example.user.epam_hw;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,20 +11,19 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirstFragment firstFragment = new FirstFragment();
-    private SecondFragment secondFragment = new SecondFragment();
+    private FirstFragment firstFragment;
+    private SecondFragment secondFragment;
     private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
+        initializeFragments();
+        initializeViews();
         setActiveFragment(firstFragment);
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(navigationListener);
     }
 
     private void setActiveFragment(Fragment fragment) {
@@ -51,5 +51,16 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    private void initializeFragments() {
+        firstFragment = new FirstFragment();
+        secondFragment = new SecondFragment();
+    }
+
+    private void initializeViews() {
+        drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(navigationListener);
+    }
 
 }
