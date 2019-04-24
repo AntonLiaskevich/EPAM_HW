@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
                     break;
                 case R.id.second_fragment:
-                    setActiveFragment(secondFragment);
+                    setActiveFragment( new SecondFragment());
 
                     break;
             }
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeFragments() {
         firstFragment = new FirstFragment();
-        secondFragment = new SecondFragment();
     }
 
     private void initializeViews() {
