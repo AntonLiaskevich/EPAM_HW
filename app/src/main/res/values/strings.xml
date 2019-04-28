@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EPAM_HW</string>
+    <string name="first_fragment">First Fragment</string>
+    <string name="second_fragment">Second fragment</string>
+    <string name="gmail">antlon.lesk@gmail.com</string>
+    <string name="anton">Anton</string>
 </resources>
